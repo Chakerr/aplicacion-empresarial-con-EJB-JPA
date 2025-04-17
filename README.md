@@ -42,3 +42,5 @@ Para entender mejor el uso de **JPA y EJB**, se recomienda revisar los siguiente
 - [Tutorial 2: EJB + JPA](https://www.youtube.com/watch?v=XGUiwXSY6IA)
 - [Tutorial 3: EJB + JPA](https://www.youtube.com/watch?v=RX23s1RN2SI)
 
+- 
+
