@@ -6,35 +6,40 @@ Este proyecto implementa la capa de persistencia para una aplicación Java EE ut
 El sistema gestiona información de estudiantes y cursos, permitiendo el registro y administración de relaciones **muchos a muchos** entre ellos. Además, se amplió la funcionalidad para gestionar proyectos de espacio público, permitiendo operaciones CRUD sobre distintas entidades.
 
 ## Funcionalidades Implementadas
-- **Gestión de Estudiantes y Cursos**:
-  - Creación, modificación y eliminación de cursos.
-  - Asignación de estudiantes a múltiples cursos y viceversa.
-  - Persistencia de datos mediante **JPA** con relaciones **muchos a muchos**.
+
+### 1. Gestión de Estudiantes y Cursos
+- Registro de cursos con código, nombre, créditos, semestre, y cupos.
+- Asignación de estudiantes a múltiples cursos (relación muchos a muchos).
+- Persistencia de datos con anotaciones JPA.
+- Lógica de negocio encapsulada en EJB `CursoFacade`.
+
+### 2. Manejo de Proyectos de Espacio Público
+- Entidad `ProyectoPublico` con atributos: nombre, descripción, localidad, presupuesto, número de habitantes.
+- EJB `ProyectoPublicoFacade` con operaciones: crear, buscar, listar, actualizar, eliminar.
+- Prueba funcional mediante `ProyectoServlet`.
   
-- **Manejo de Proyectos de Espacio Público**:
-  - Registro y administración de proyectos con atributos como **nombre, descripción, localidad, presupuesto y número de habitantes**.
-  - Implementación de operaciones CRUD para gestionar proyectos.
-  
-- **Estructura del Proyecto**:
-  - **Proyecto WAR**: Contiene las vistas y controladores web.
-  - **Proyecto EJB**: Implementa la lógica de negocio y la persistencia con JPA.
-  - **Proyecto Integrador WAR-EJB**: Conecta la capa de presentación con la lógica de negocio.
+### 3. Estructura del Proyecto
+- **Proyecto EJB:** Contiene entidades JPA y lógica con EJBs.
+- **Proyecto WAR:** Contiene controladores web (Servlet).
+- **Proyecto EAR:** Integrador entre EJB y WAR.
 
 ## Tecnologías Utilizadas
-- **Java EE**
-- **EJB (Enterprise JavaBeans)**
-- **JPA (Java Persistence API) con EclipseLink**
-- **GlassFish 4.1**
-- **NetBeans 8.0.2**
-- **JSP para la interfaz de usuario**
-- **Base de datos con llaves foráneas**
+- Java EE 7
+- EJB (Enterprise JavaBeans)
+- JPA (Java Persistence API) + EclipseLink
+- GlassFish Server 4.1
+- NetBeans IDE 8.0.2
+- JSP (opcional)
+- Servlet (`ProyectoServlet`) para pruebas
 
-## Archivos Destacados
-- `studentInfo.jsp`: Página para la gestión de estudiantes y cursos.
-- **Script SQL** para la creación de la base de datos.
-
-## Repositorio y Entrega
-El código fuente del proyecto está disponible en **GitHub**. 
+## Ejecución
+1. Abrir el proyecto en NetBeans 8.0.2.
+2. Asegurarse de usar JDK 8 y GlassFish Server 4.1.
+3. Ejecutar el proyecto raíz (`TallerEJBJPA`) sobre GlassFish.
+4. Acceder en navegador a:
+   ```
+   http://localhost:8080/TallerEJBJPA-war/proyectos
+   ```
 
 ## Material de Apoyo
 Para entender mejor el uso de **JPA y EJB**, se recomienda revisar los siguientes tutoriales:
